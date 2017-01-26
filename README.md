@@ -1,3 +1,12 @@
+#commentaires generaux
+
+le but du projet était d'utiliser les observables pour gerer socket.io avec Angular 2, cette version reste très rudimentaire (en particulier la partie graphique) du à des soucis monstres d'installation et de configuration. elle est suceptible d'être améliorée dans les jours à venir.
+Je pense pouvoir ajouter petit à petit toutes les options pour avoir un chat digne de ce nom.
+
+De plus j'ai rencontré des difficultés pour mettre le site en ligne, je me pencherai dessus au cours des prochains jours.
+Le site fonctionne en local
+
+
 # ChatSocket
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
