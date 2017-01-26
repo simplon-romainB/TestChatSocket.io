@@ -16,12 +16,13 @@ export class AppComponent {
 tabUsers = [];
 b= [];
 mess:string;
-
+/* on surveille les messages arrivant du serveur */
 a = this.chat2service.getMessages().subscribe(data => {
     this.b.push(data);
     console.log(this.b);
 
   })
+  /* on surveille les connexions */
 usersOnline = this.chat2service.whoThere().subscribe(data =>{
   this.tabUsers.push(data);
   })
@@ -33,14 +34,13 @@ constructor(private chat2service:Chat2Service){}
 ngOnInit() {
 
 }
+/* on fait une fonction relai pour envoyer les messages */
   sendMessages() {
-    this.data.message = this.mess;
+    this.data.message = this.mess; /* il n'est pas possible de mettre directement la variable mess dans les data envoyés */
     this.chat2service.sendMessage(this.data);
     this.mess = '';
 
   }
 
-  whoThere() {
-    this.chat2service.whoThere()
-  }
+
 }

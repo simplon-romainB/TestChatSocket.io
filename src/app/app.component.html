@@ -1,5 +1,23 @@
+<style>
 
-    <div class= "container-fluid">
+.user {
+  font-family: arial black;
+}
+
+.messages {
+  font-style: #333333;
+}
+
+.date {
+  font-style:italic;
+}
+
+
+
+
+
+</style>
+<div class= "container-fluid">
   <div class= "row">
 <div [ngClass]= "'col-md-4'">
     <div  [ngClass]= "'panel panel-default'">
@@ -11,9 +29,10 @@
     <input [(ngModel)]="mess" enctype = "application/x-www-form-urlencoded" type="text" [ngModelOptions]="{standalone: true}" [ngClass]="form-control"  />
     </div>
     <button [ngClass]="'btn btn-default'" type="button" (click)= "sendMessages()" >envoyer</button>
-  </form>
+    <a routerLink='/register'><button [ngClass]= "'btn btn-default'">S'inscrire</button></a>
+            </form>
   </div>
-  </div>
+</div>
 
 
 
@@ -25,7 +44,8 @@
 <div [ngClass] ="'row'">
   <div [ngClass]="'col-md-12'">
     <div  [ngClass]= "'panel panel-default'">
-<div *ngFor ="let messages of b">{{messages.userName}}: {{messages.message}}. {{messages.date}}</div>
+<div *ngFor ="let messages of b"><h2 [ngClass] = "'user'">{{messages.userName}}:</h2><h3 [ngClass] = "'messages'"> {{messages.message}}</h3><p [ngClass] = "'date'"> {{messages.date}}</p></div>
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

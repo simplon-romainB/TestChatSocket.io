@@ -10,7 +10,7 @@ import * as io from 'socket.io-client';
 export class Chat2Service {
  socket:any = io.connect('http://caty.herokuapp.com/');
  data:{message:string , roomName:string};
-  constructor(http:Http) { }
+  constructor() { }
 
 
 sendMessage(data){
@@ -31,8 +31,8 @@ whoThere() {
   let usersOnline = new Observable(observer =>{
     this.socket.on('init', (data) =>{
       observer.next(data);
+      });
     });
-  });
   return usersOnline;
-}
+  }
 }
