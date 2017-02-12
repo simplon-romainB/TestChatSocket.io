@@ -29,7 +29,7 @@ usersOnline = this.chat2service.whoThere().subscribe(data =>{
 
 
 
- data = {message:'', roomName: 'public'};
+ data = {message:'', roomName: 'Public'};
 constructor(private chat2service:Chat2Service){}
 ngOnInit() {
 
@@ -41,9 +41,5 @@ ngOnInit() {
     this.mess = '';
 
   }
-/* fonction inutile
-  whoThere() {
-    this.chat2service.whoThere()
-  }
 }
- */
+
